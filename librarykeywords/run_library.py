@@ -5,5 +5,6 @@ from robot.api import ResultWriter
 
 #https://robot-framework.readthedocs.io/en/3.0/autodoc/robot.running.html
 suite = TestSuiteBuilder().build("./library.robot")
-result = suite.run()
-ResultWriter(result).write_results(report='report.html', log="log.html")
+result = suite.run(output="test_output.xml")
+#ResultWriter(result).write_results(report='report.html', log="log.html")
+ResultWriter("test_output.xml").write_results(report='report.html', log="log.html")
